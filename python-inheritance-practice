@@ -1,0 +1,25 @@
+# Creating Parent Class
+class Person:
+    def __init__(self, fname, lname):
+        self.fname = fname
+        self.lname = lname
+
+    def intro(self):
+        print("My name is " + self.fname + " " + self.lname)
+
+# Creating Child Class
+class Student(Person):
+    def __init__(self, fname, lname, id_no):
+        super().__init__(fname, lname)  # Call parent class constructor
+        self.id_no = id_no              # Fixed variable name
+
+    def intro2(self):
+        # Fixed print parentheses and added spacing between strings
+        print("My name is " + self.fname + " " + self.lname + " and " + self.id_no + " is my ID number.")
+
+# Creating Object with all 3 required arguments
+stu1 = Student("Yeshu", "Molla", "1234")
+
+# Calling methods
+stu1.intro()   # Inherited from Person
+stu1.intro2()  # Defined in Student
